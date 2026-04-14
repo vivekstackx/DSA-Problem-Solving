@@ -1,6 +1,6 @@
 package ArrayTraversal;
 
-class ArrayTraversal {
+class Solution {
 
     // traverse each element of Array
     void traverseArrayElement(int[] arr) {
@@ -18,7 +18,7 @@ class ArrayTraversal {
 
 public class Main {
     public static void main(String[] args) {
-        ArrayTraversal obj = new ArrayTraversal();
+        Solution obj = new Solution();
 
         int[] arr = new int[5];
         arr[0] = 10;

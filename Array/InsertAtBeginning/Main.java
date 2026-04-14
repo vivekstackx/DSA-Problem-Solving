@@ -37,8 +37,8 @@ public class Main {
     public static void main(String[] args) {
 
         InsertAtBeginning obj = new InsertAtBeginning();
-
-        int[] arr = new int[5];
+         int capacity = 5;
+        int[] arr = new int[capacity];
 
         // initial valid size
         int size = 3;

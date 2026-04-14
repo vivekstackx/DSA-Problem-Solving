@@ -1,17 +1,16 @@
-package InsertAtBeginning;
+// package Array;
 
 class InsertAtBeginning {
 
     // insert at beginning in fixed-size array
     int insertAtStart(int[] arr, int size, int newElement) {
         int capacity = arr.length;
-        // Case 1: array full
-        if (size == capacity) {
-            System.out.println("Cannot insert: Array is full");
+
+        if (size >= capacity) {
             return size;
         }
 
-        // Case 2: shift elements right
+        // shift elements right
         for (int i = size - 1; i >= 0; i--) {
             arr[i + 1] = arr[i];
         }
@@ -19,9 +18,7 @@ class InsertAtBeginning {
         // insert at first position
         arr[0] = newElement;
 
-        System.out.println("Element inserted successfully");
-         // size increase after insertion
-         return size + 1; 
+        return size + 1;
     }
 
     // print only valid elements
@@ -37,7 +34,7 @@ public class Main {
     public static void main(String[] args) {
 
         InsertAtBeginning obj = new InsertAtBeginning();
-         int capacity = 5;
+        int capacity = 5;
         int[] arr = new int[capacity];
 
         // initial valid size
@@ -52,9 +49,7 @@ public class Main {
 
         int newElement = 100;
 
-       size =  obj.insertAtStart(arr, size, newElement);
-
-       
+        size = obj.insertAtStart(arr, size, newElement);
 
         System.out.println("After insertion:");
         obj.printArray(arr, size);

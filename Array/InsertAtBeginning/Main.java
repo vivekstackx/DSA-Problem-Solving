@@ -4,9 +4,9 @@ class InsertAtBeginning {
 
     // insert at beginning in fixed-size array
     int insertAtStart(int[] arr, int size, int newElement) {
-
+        int capacity = arr.length;
         // Case 1: array full
-        if (size == arr.length) {
+        if (size == capacity) {
             System.out.println("Cannot insert: Array is full");
             return size;
         }

@@ -35,6 +35,7 @@
  * This is why we follow the "No-Gap Rule", where the logical end of the array
  * is always tracked using a "size" variable. The next insertion always happens
  * at index 'size', ensuring correctness and avoiding ambiguity.
+ * size represents number of valid elements
  */
 
 //======================= Hindi Version =============================================
@@ -68,6 +69,7 @@
  * - Index 2? Haan, technically yahi "Logical End" hona chahiye.
  * * Isi confusion se bachne ke liye hum "No-Gap Rule" follow karte hain, 
  * taaki 'last position' hamesha wahi ho jahan 'current_size' khatam ho raha hai.
+ * size represents number of valid elements
  */
 //----------------------------------------------------------------------------------------
 

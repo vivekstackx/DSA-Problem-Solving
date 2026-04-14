@@ -79,7 +79,7 @@ class InsertAtBeginning {
     int insertAtStart(int[] arr, int size, int newElement) {
             
          if(arr == null) {
-          return size;
+          return 0;
          }
      
         int capacity = arr.length;

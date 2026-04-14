@@ -77,11 +77,12 @@ class InsertAtBeginning {
 
     // insert at beginning in fixed-size array
     int insertAtStart(int[] arr, int size, int newElement) {
-        int capacity = arr.length;
-     
-         if(arr == null || arr.length == 0) {
+            
+         if(arr == null || arr.length == 0 || size == 0) {
           return size;
          } 
+        int capacity = arr.length;
+     
         if (size >= capacity) {
             return size;
         }

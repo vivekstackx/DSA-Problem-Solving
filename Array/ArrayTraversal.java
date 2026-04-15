@@ -14,7 +14,7 @@ class Solution {
     }
 }
 
-public class Main {
+public class ArrayTraversal {
     public static void main(String[] args) {
         Solution obj = new Solution();
 

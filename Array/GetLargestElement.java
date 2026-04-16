@@ -3,13 +3,12 @@ class Solution {
 
     // geting the largest element from array
     int getMaxValue(int[] arr) {
+         int max = Integer.MIN_VALUE;
         if (arr == null || arr.length == 0) {
-            return Integer.MIN_VALUE;
+            return max;
         }
 
-        int max = arr[0];
-
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
                 max = arr[i];
             }

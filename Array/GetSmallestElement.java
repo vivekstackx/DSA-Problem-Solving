@@ -3,13 +3,12 @@ class Solution {
 
     // geting the smallest element from array
     int getMinValue(int[] arr) {
+          int min = Integer.MAX_VALUE;
         if (arr == null || arr.length == 0) {
-            return Integer.MAX_VALUE;
+            return min;
         }
-
-        int min = arr[0];
-
-        for (int i = 1; i < arr.length; i++) {
+        
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] < min) {
                 min = arr[i];
             }

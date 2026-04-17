@@ -1,4 +1,8 @@
-
+/*
+  Example For testing...
+  -> {10, 20, 30, 40, 50, 60,70, 80}
+  -> {15, 10, 7, 9, 15, 14, 12, 8, 15}
+*/
 class Solution {
 
   // get the second largest element from array (using 2 loop)

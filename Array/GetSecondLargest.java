@@ -4,7 +4,7 @@ class Solution {
   // get the second largest element from array (using 2 loop)
   int getSecondMax(int[] arr) {
 
-    if (arr == null || arr.length == 0) {
+    if (arr == null || arr.length < 2) {
       return -1;
     }
 

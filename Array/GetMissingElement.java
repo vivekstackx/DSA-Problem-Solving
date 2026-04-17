@@ -25,6 +25,8 @@ public class GetMissingElement {
 
         int[] arr = { 1, 2, 4, 5, 6 };
         int N = 6;
+        
+        // find one missing number in array
 
         System.out.println(obj.getMissingData(arr, N));
     }

@@ -16,69 +16,68 @@ class Solution {
         return new int[] { first, last };
     }
 
-    // function to get the first occurance in array
-    int getFirstOccurance(int[] arr, int target) {
-        int start = 0;
-        int end = arr.length - 1;
+    // function to get the first occurance of target element
+      int getFirstOccurance(int[] nums , int target){
+           int firstOcr = -1;
+           // implement binary search
+            int start = 0;
+            int end = nums.length - 1;
 
-        int leftOcr = -1;
+             while(start <= end){
+                  int mid = start + (end - start)/2;
 
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
+                  if(nums[mid] == target){
+                     firstOcr = mid;
+                     end = mid - 1;
+                  }
+                  else if(nums[mid] > target){
+                      end = mid - 1;
+                  }
+                  else {
+                     start = mid + 1;
+                  }
+             }
+             return firstOcr;
+      }
 
-            if (arr[mid] == target) {
-                leftOcr = mid;
-                end = mid - 1;
-            } else if (arr[mid] < target) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
+      // function to get the last occurance of target element
+       int getLastOccurance(int[] nums , int target){
+            int lastOcr = -1;
+
+            // implement binary search
+             int start = 0;
+             int end = nums.length - 1;
+             while(start <= end){
+                  int mid = start + (end - start) / 2;
+
+                  if(nums[mid] == target){
+                      lastOcr = mid;
+                      start = mid + 1;
+                  }
+                  else if(nums[mid] > target){
+                     end = mid - 1;
+                  }
+                  else {
+                     start = mid + 1;
+                  }
+             }
+             return lastOcr;
+       }
+
+    // function to get the first and last occurance (using binay search)
+    public int[] searchRange(int[] nums, int target) {
+        
+        if(nums== null || nums.length == 0){
+            return new int[]{-1, -1};
         }
-        return leftOcr;
+        
+        int firstOcr = getFirstOccurance(nums , target);
+        if(firstOcr == -1){
+            return new int[]{-1, -1};
+        }
+        int lastOcr = getLastOccurance(nums , target);
+        return new int[]{firstOcr , lastOcr};
     }
-
-    // function to get the last occurance in array
-    int getLastOccurance(int[] arr, int target) {
-        int start = 0;
-        int end = arr.length - 1;
-
-        int lastOcr = -1;
-
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            if (arr[mid] == target) {
-                lastOcr = mid;
-                start = mid + 1;
-            } else if (arr[mid] < target) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
-        }
-        return lastOcr;
-    }
-
-    // find the first and last occurance in array (using binarySearch)
-    int[] getRangeBinarySearch(int[] arr, int target) {
-        int[] occurances = { -1, -1 };
-
-        if (arr == null || arr.length == 0) {
-            return occurances;
-        }
-
-        int firstOcr = getFirstOccurance(arr, target);
-        if (firstOcr == -1) {
-            return occurances;
-        }
-        int lastOcr = getLastOccurance(arr, target);
-
-        occurances[0] = firstOcr;
-        occurances[1] = lastOcr;
-        return occurances;
-    }
-
 }
 
 public class FirstAndLastOccurrence {
@@ -100,7 +99,7 @@ public class FirstAndLastOccurrence {
 
         int target2 = 8;
 
-        int[] ans2 = obj.getRangeBinarySearch(sortedArr, target2);
+        int[] ans2 = obj.searchRange(sortedArr, target2);
 
         System.out.println("first occurance is : " + ans2[0]);
         System.out.println("last occurance is : " + ans2[1]);

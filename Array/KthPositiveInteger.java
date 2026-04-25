@@ -1,7 +1,7 @@
 
 class Solution {
 
-    // function to get Kth missing number
+    // function to get Kth missing number (using binary search)
     int getKthMissing(int[] arr, int KthNo) {
         int start = 0;
         int end = arr.length - 1;

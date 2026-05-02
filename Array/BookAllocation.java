@@ -3,6 +3,23 @@
  fir sabhi tukro ka sum me jis tukro ka minimum sum hoga usko return karna h to vanha pe 
  book allocation vala same logic lagega
  jaise ki leetcode 410 problem and 1011 vala problem bilkul same iasi logic pe based hai
+
+ jaise ki ---
+ ## Example 1 Ka Breakdown Aapke paas array hai: [7, 2, 5, 10, 8] aur k = 2 -----
+ ias array ko 2 tukdon mein todne (split karne) ke 4 tareeqe ho sakte hain:
+ Split 1: [7] aur [2, 5, 10, 8]
+ Sums: 7 aur 25.
+ Maximum sum in dono me se: max(7, 25) = 25 
+ Split 2: [7, 2] aur [5, 10, 8]
+ Sums: 9 aur 23.
+ Maximum sum in dono me se: max(9, 23) = 23
+ Split 3: [7, 2, 5] aur [10, 8]
+ Sums: 14 aur 18.
+ Maximum sum in dono me se: max(14, 18) = 18.
+ Split 4: [7, 2, 5, 10] aur [8]
+ Sums: 24 aur 8.
+ Maximum sum in dono me se: max(24, 8) = 24.
+ Ab in sabhi max sums [25, 23, 18, 24] mein se sabse chota (minimized) value kya hai? 18.Isliye output 18 aata hai!
 */
 class Solution {
 

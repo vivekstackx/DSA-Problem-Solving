@@ -1,3 +1,9 @@
+/*
+ jab v hame array ko "k" (1,2,3 etc) tukro me devide karna h or har tukro ka sum nikalna h or 
+ fir sabhi tukro ka sum me jis tukro ka minimum sum hoga usko return karna h to vanha pe 
+ book allocation vala same logic lagega
+ jaise ki leetcode 410 problem and 1011 vala problem bilkul same iasi logic pe based hai
+*/
 class Solution {
 
     // check book allocate for specific mid (pages)

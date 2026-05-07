@@ -63,7 +63,7 @@ class Solution {
     }
 
    
-// swap 2 character private
+// swap 2 character
 private void swap(char[] s, int start, int end) {
     char temp = s[start];
     s[start] = s[end];

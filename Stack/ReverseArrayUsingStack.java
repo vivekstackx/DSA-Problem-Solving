@@ -62,20 +62,23 @@ class Solution {
         }
     }
 
-    // reverse Array using 2 pointer approch
-   public void reverseString(char[] s) {
-        Stack stack = new Stack(s.length);
-
-         for(int i = 0; i < s.length; i++){
-             stack.push(s[i]);
-         }
-
-         int j = 0;
-         while(!stack.isEmpty()){
-             s[j] = stack.pop();
-             j++;
-         }
+   
+// swap 2 character private
+private void swap(char[] s, int start, int end) {
+    char temp = s[start];
+    s[start] = s[end];
+    s[end] = temp;
+}
+ // reverse Array using 2 pointer approch
+public void reverseString(char[] s) {
+    int start = 0;
+    int end = s.length - 1;
+    while (start < end) {
+        swap(s, start, end);
+        start++;
+        end--;
     }
+}
    
 }
 

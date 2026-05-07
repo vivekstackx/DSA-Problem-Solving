@@ -43,8 +43,7 @@ class Solution {
         }
 
     }
-
-    // reverse array using stack
+     // reverse array using stack
     void reverseArray(char[] arr) {
         if (arr.length == 0) {
             return;
@@ -62,6 +61,22 @@ class Solution {
             j++;
         }
     }
+
+    // reverse Array using 2 pointer approch
+   public void reverseString(char[] s) {
+        Stack stack = new Stack(s.length);
+
+         for(int i = 0; i < s.length; i++){
+             stack.push(s[i]);
+         }
+
+         int j = 0;
+         while(!stack.isEmpty()){
+             s[j] = stack.pop();
+             j++;
+         }
+    }
+   
 }
 
 public class ReverseArrayUsingStack {
@@ -73,9 +88,11 @@ public class ReverseArrayUsingStack {
 
         System.out.println(ch);
         
-        obj.reverseArray(ch);
+        obj.reverseString(ch);
 
         System.out.println(ch);
 
     }
 }
+
+

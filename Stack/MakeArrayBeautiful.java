@@ -91,7 +91,7 @@ public class MakeArrayBeautiful {
     public static void main(String[] args) {
         Solution obj = new Solution();
 
-        int[] ans = obj.makeBeauty(new int[] {2,-2, -1, 1});
+        int[] ans = obj.makeBeauty(new int[] {2, 3, 5, -4, 6, -2, -8, 9});
 
         System.out.println(Arrays.toString(ans));
 

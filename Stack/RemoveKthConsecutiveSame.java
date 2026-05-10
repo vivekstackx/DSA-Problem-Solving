@@ -105,6 +105,6 @@ public class RemoveKthConsecutiveSame {
 
     String ans = obj.removeConsecutive(str, k);
 
-    System.out.println(ans);
+    System.out.println(ans); // output : aa
   }
 }

@@ -1,4 +1,9 @@
 import java.util.Stack;
+/*
+ daily tempretures vale ias sawal me ham har element ke next greater check kar ke uaske bich ka distance get karte h ,
+ vahi stock span vale sawal me just iske ulte h , usme ham har element ke previous greater element check karte h or uaske bich 
+ ka distance get karte h 
+*/
 
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {

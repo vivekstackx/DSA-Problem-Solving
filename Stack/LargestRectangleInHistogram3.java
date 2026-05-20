@@ -8,7 +8,7 @@ class Solution{
      deta hun , jisse fayada ye hota h ki jab for loop terminate ho jata h , to fir stack me fir v element kuchh 
      bach sakte h , to ham ek or loop yani while loop lagate h or sabhi element ko stack se ek ke karke pop karte h 
      or sabhi element ka area calcutate karte h , yani notice karne vali baat ye h ki ham yanha extra ek loop laga 
-     rhe h yani ki while loop , but ye kaam whithout extra while loop ke v kaam ho sakta h , iaske lie maine trick use kiya h
+     rhe h yani ki while loop , but ye kaam without extra while loop ke v kaam ho sakta h , iaske lie maine trick use kiya h
      jab i == height.length tak jata h , to ham height 0 pe set karte h kyunki iasse for loop chalte time hi last time pe 
      stack se o sabhi jo data rah gya tha uan sabhi ka area calculate ho jati h , jisse hame extra while loop ki need nahi hoti h
   */

@@ -35,7 +35,7 @@ class Solution{
   }
 }
 
-public class Main {
+public class LargestRectangleInHistogram3 {
     public static void main(String[] args) {
       
        int[] histogram = {2, 3, 4, 2, 6, 5, 4, 5, 3};

@@ -3,7 +3,7 @@ import java.util.Deque;
 
 class Solution{
   /*
-     ye vala me maine ek trick lagaya h , mai for loop ko heights.length tak chal rha hun , 
+     ye vala me maine ek trick lagaya h , mai for loop ko heights.length tak chala rha hun , 
      jab i = height.length ho jata h yani index ke bahar ho jata h i , to uas time mai height ko 0 pe set kar 
      deta hun , jisse fayada ye hota h ki jab for loop terminate ho jata h , to fir stack me fir v element kuchh 
      bach jate h , to ham ek or loop yani while loop lagate h or sabhi element ko stack se ek ke karke pop karte h 

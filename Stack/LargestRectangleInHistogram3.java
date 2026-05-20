@@ -6,7 +6,7 @@ class Solution{
      ye vala me maine ek trick lagaya h , mai for loop ko heights.length tak chala rha hun , 
      jab i = height.length ho jata h yani index ke bahar ho jata h i , to uas time mai height ko 0 pe set kar 
      deta hun , jisse fayada ye hota h ki jab for loop terminate ho jata h , to fir stack me fir v element kuchh 
-     bach jate h , to ham ek or loop yani while loop lagate h or sabhi element ko stack se ek ke karke pop karte h 
+     bach sakte h , to ham ek or loop yani while loop lagate h or sabhi element ko stack se ek ke karke pop karte h 
      or sabhi element ka area calcutate karte h , yani notice karne vali baat ye h ki ham yanha extra ek loop laga 
      rhe h yani ki while loop , but ye kaam whithout extra while loop ke v kaam ho sakta h , iaske lie maine trick use kiya h
      jab i == height.length tak jata h , to ham height 0 pe set karte h kyunki iasse for loop chalte time hi last time pe 

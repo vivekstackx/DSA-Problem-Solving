@@ -37,7 +37,7 @@ may not be celebrity, so we verify it.
     }
 }
 
-public class GetCelebrityM3 {
+public class GetCelebrityM3Using2Pointer {
     public static void main(String[] args) {
     int[][] matrix = { 
       {0,1,0,1,1},

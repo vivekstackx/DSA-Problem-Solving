@@ -35,3 +35,19 @@ may not be celebrity, so we verify it.
         return candidate;
     }
 }
+
+public class GetCelebrityM3 {
+    public static void main(String[] args) {
+    int[][] matrix = { 
+      {0,1,0,1,1},
+      {0,0,0,1,1},
+      {0,1,0,1,0},
+      {0,0,0,0,0},
+      {1,0,1,1,0}
+      };
+      
+       int celebrity = new Solution().celebrity(matrix);
+       System.out.println(celebrity);
+    
+    }
+}

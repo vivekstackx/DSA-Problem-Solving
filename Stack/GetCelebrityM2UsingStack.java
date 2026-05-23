@@ -1,6 +1,8 @@
 import java.util.Deque;
 import java.util.ArrayDeque;
-
+/*
+ celebrity ki pahchan ye h ki celebrity kisi ko nahi janta ho or har koi celebrity ko janta ho
+*/
 class Solution {
 
     int celebrity(int[][] matrix) {

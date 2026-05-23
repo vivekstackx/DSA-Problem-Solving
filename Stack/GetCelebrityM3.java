@@ -1,5 +1,7 @@
-class Solution {
 
+class Solution {
+  
+  
 /* We start with two pointers from both ends. At each step, we eliminate at
 least one non-celebrity. Eventually only one candidate remains, which may or
 may not be celebrity, so we verify it.
@@ -12,8 +14,7 @@ may not be celebrity, so we verify it.
         int j = n - 1;
 
         // Step 1: find candidate
-        while (i < j) // jab tak 2 candidates bache hain, compare karo aur ek ko eliminate karo 
-
+        while (i < j) {  // jab tak 2 candidates bache hain, compare karo aur ek ko eliminate karo 
             if (matrix[i][j] == 1) {
                 i++;   // i knows j → i is not celebrity
             } else {

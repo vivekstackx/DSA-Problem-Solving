@@ -1,6 +1,9 @@
 
 class Solution {
-  
+
+  /*
+ celebrity ki pahchan ye h ki celebrity kisi ko nahi janta ho or har koi celebrity ko janta ho
+*/
   
 /* We start with two pointers from both ends. At each step, we eliminate at
 least one non-celebrity. Eventually only one candidate remains, which may or

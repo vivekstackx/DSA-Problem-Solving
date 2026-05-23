@@ -39,7 +39,7 @@ class Solution{
        return -1;
    }
 }
-public class GetCelebrity {
+public class GetCelebrityM1 {
     public static void main(String[] args) {
     int[][] matrix = { {0} };
       

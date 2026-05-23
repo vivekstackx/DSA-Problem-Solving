@@ -13,32 +13,32 @@ class Solution {
 
         // Step 1: eliminate candidates
         while (stack.size() > 1) {
-            int a = stack.pop();
-            int b = stack.pop();
+            int firstPerson = stack.pop();
+            int secondPerson = stack.pop();
 
-            if (matrix[a][b] == 1) {
-                stack.push(b); // a knows b → a not celebrity
+            if (matrix[firstPerson][secondPerson] == 1) {
+                stack.push(secondPerson); // a knows b → a not celebrity
             } else {
-                stack.push(a); // a doesn't know b → b not celebrity
+                stack.push(firstPerson); // a doesn't know b → b not celebrity
             }
         }
 
         // Step 2: verification
-        int cand = stack.pop();
+        int candidate = stack.pop();
 
         for (int i = 0; i < n; i++) {
-            if (i == cand) continue;
+            if (i == candidate) continue;
 
-            if (matrix[cand][i] == 1 || matrix[i][cand] == 0) {
+            if (matrix[candidate][i] == 1 || matrix[i][candidate] == 0) {
                 return -1;
             }
         }
 
-        return cand;
+        return candidate;
     }
 }
 
-public class GetCelebrity {
+public class GetCelebrityM2 {
     public static void main(String[] args) {
     int[][] matrix = { 
       {0,1,0,1,1},

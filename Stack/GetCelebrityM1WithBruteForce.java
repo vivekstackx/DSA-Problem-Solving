@@ -1,5 +1,7 @@
 class Solution{
-  
+  /*
+ celebrity ki pahchan ye h ki celebrity kisi ko nahi janta ho or har koi celebrity ko janta ho
+*/
    int celebrity(int[][] matrix){
        
         if(matrix == null || matrix.length == 0) {

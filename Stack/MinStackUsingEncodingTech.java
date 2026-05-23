@@ -3,6 +3,17 @@ import java.util.*;
 /*
  ias sawal ka logic av clear nahi h , to iase samjhna parega
 */
+
+/*
+Min Stack (Single Stack Encoding Approach)
+
+Note:
+This solution uses encoding technique to store minimum efficiently in O(1) space (extra stack not used).
+
+Concept is partially understood.
+Will revisit the logic of encoding (2*x - min) for deeper understanding.
+*/
+
 class MinStack {
 
     private Deque<Long> stack;

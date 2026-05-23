@@ -39,11 +39,18 @@ class Solution{
        return -1;
    }
 }
-public class GetCelebrityM1 {
+
+public class GetCelebrity {
     public static void main(String[] args) {
-    int[][] matrix = { {0} };
+    int[][] matrix = { 
+      {0,1,0,1,1},
+      {0,0,0,1,1},
+      {0,1,0,1,0},
+      {0,0,0,0,0},
+      {1,0,1,1,0}
+      };
       
-       int celebrity = new Solution().getCelebrity(matrix);
+       int celebrity = new Solution().celebrity(matrix);
        System.out.println(celebrity);
     
     }

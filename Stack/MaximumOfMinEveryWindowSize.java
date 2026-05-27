@@ -8,7 +8,7 @@ class Solution {
         for (int i = 1; i <= n; i++) {
             int max = Integer.MIN_VALUE;
 
-            // possible window
+            // possible window check
             for (int j = 0; (n - j) >= i; j++) {
                 int min = Integer.MAX_VALUE;
             

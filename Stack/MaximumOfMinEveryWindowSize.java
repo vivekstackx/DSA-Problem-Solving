@@ -11,7 +11,8 @@ class Solution {
             // possible window check
             for (int j = 0; (n - j) >= i; j++) {
                 int min = Integer.MAX_VALUE;
-            
+
+                // minimum of current window
                 for (int k = j; k < j + i; k++) {
                     min = Math.min(min, arr[k]);
                 }

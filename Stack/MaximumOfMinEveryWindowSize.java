@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+// Time Complexity : O(n3)
+
 class Solution {
     public ArrayList<Integer> maxOfMins(int[] arr) {
         int n = arr.length;

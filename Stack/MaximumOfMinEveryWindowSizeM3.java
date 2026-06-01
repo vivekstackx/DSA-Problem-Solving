@@ -2,6 +2,7 @@ import java.util.Deque;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 
+// Time Complexity : O(n)
 
 class Solution{
     // function to get the next smallest element

@@ -3,7 +3,13 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 
 // Time Complexity : O(n)
-
+/*
+ ias code me maine har element ka alag se next and previous smallest element calculate kar ke kisi array me 
+ store karne ki bajay , maine direct run time pe hi jab element pop hota h uasi time pe uas current element ka 
+ next and previous smallest element get kr ke window size calculate kar leta hun iasse fayada ye h ki alag se 
+ 2 array create karne ki need nahi pari , jo pahle ek array next smallest element store karta tha or dusra 
+ vala array previous smallest element store kar ke rakhta tha
+*/
 class Solution {
     public int[] maxOfMins(int[] arr) {
         // code here

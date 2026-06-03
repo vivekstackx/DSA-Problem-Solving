@@ -26,8 +26,6 @@ class Solution{
       }
          // function to display the array elements
     void dis(int[] arr) {
-        int n = arr.length;
-
         for (int data : arr) {
             System.out.print(data + " ");
         }

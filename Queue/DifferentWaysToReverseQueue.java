@@ -71,3 +71,43 @@ public class DifferentWaysToReverseQueue {
         System.out.println("After Reverse  : " + queue);
     }
 }
+
+/*
+Different Ways To Reverse Queue
+
+M1 : Reverse Queue Using Array
+M2 : Reverse Queue Using Stack
+M3 : Reverse Queue Using Recursion
+
+Example:
+
+Queue:
+10 20 30 40 50
+
+After Reverse:
+50 40 30 20 10
+
+---------------------------------
+Time Complexity
+---------------------------------
+
+M1 -> O(n)
+M2 -> O(n)
+M3 -> O(n)
+
+---------------------------------
+Extra Space
+---------------------------------
+
+M1 -> O(n)
+M2 -> O(n)
+M3 -> O(n)  // Recursion Call Stack
+
+---------------------------------
+Notes
+---------------------------------
+
+M1 : Uses an extra array.
+M2 : Uses an explicit stack.
+M3 : Uses the recursion call stack.
+*/

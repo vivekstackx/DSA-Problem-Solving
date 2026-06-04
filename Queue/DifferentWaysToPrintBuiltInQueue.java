@@ -82,3 +82,27 @@ public class DifferentWaysToPrintBuiltInQueue {
         // obj.printUsingQueueRotation(queue);
     }
 }
+
+/*
+Different Ways To Print Queue
+
+M1 : Print and destroy queue data.
+M2 : Print queue and restore data using extra array.
+M3 : Print queue using for-each loop.
+M4 : Print queue using toString().
+M5 : Print queue using queue rotation (without extra space).
+
+Time Complexity:
+M1 -> O(n)
+M2 -> O(n)
+M3 -> O(n)
+M4 -> O(n)
+M5 -> O(n)
+
+Extra Space:
+M1 -> O(1)
+M2 -> O(n)
+M3 -> O(1)
+M4 -> O(1)
+M5 -> O(1)
+*/

@@ -1,5 +1,3 @@
-package FirstNegativeIntegerForEveryWindowSize;
-
 import java.util.List;
 import java.util.Queue;
 import java.util.ArrayDeque;

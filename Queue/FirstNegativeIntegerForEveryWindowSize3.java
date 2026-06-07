@@ -42,6 +42,41 @@ class Solution {
         return ans;
     }
 
+    
+     List<Integer> firstNegativeInteger2(int[] arr, int k) {
+
+        int n = arr.length;
+
+        List<Integer> ans = new ArrayList<>();
+        Queue<Integer> queue = new ArrayDeque<>();
+
+        for (int i = 0; i < n; i++) {
+
+            // store negative element index
+            if (arr[i] < 0) {
+                queue.offer(i);
+            }
+
+            // window formed
+            if (i >= k - 1) {
+
+                // remove indices outside current window
+                 if(!queue.isEmpty() && queue.peek() <= i - k) {
+                    queue.poll();
+                }
+
+                // first negative of current window
+                if (queue.isEmpty()) {
+                    ans.add(0);
+                } else {
+                    ans.add(arr[queue.peek()]);
+                }
+            }
+        }
+
+        return ans;
+    }
+
     // display list
     void display(List<Integer> list) {
         System.out.println(list);

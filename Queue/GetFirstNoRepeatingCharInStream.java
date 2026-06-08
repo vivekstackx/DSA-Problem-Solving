@@ -38,13 +38,13 @@ class Solution{
        }
 }
 
-public class GetFirstNoRepeatingCharacter {
+public class GetFirstNoRepeatingCharInStream {
     public static void main(String[] args) {
         Solution obj = new Solution();
 
         String str = "abcacdbd";
 
-        String ans = obj.getFirstNoReaptingChar(str);
+        String ans = obj.getFirstNoRepeatingChar(str);
         System.out.println(ans);
     }
 }

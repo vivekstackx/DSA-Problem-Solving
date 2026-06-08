@@ -1,5 +1,3 @@
-package ImplementStackUsingQueue;
-
 import java.util.Queue;
 import java.util.ArrayDeque;
 

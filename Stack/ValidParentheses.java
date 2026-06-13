@@ -1,6 +1,26 @@
 
 import java.util.Stack;
 
+/*
+ALGORITHM
+
+1)  Create an empty stack.
+2)  Scan the symbols of the expression from left to right.
+3)  If the symbol is a left bracket, then push that symbol onto the stack.
+4)  If the symbol is a right bracket, do the following:
+    a)  If the stack is empty
+        Print "Invalid expression: Right brackets are more than the left brackets."
+    b)  else
+        Pop an element from the stack.
+            If the popped bracket does not match with right bracket
+            Print "Invalid expression: Mismatched brackets."
+5)  After scanning all the symbols of the expression
+    a)  If stack is empty
+        Print "Valid expression: brackets are well balanced."
+    b)  else
+        Print "Invalid expression: Left brackets are more than right brackets."
+*/
+
 class Solution {
 
   // check opening and closing bracket is matched or not

@@ -40,7 +40,7 @@ class PostfixEvaluator {
 public class PostfixEvaluatorDemo {
     public static void main(String[] args) {
 
-        String[] exp = {"7","5","9","/","-"};
+        String[] exp = {"12", "234", "978", "+", "*"};
 
         System.out.println(new PostfixEvaluator().evaluatePostfix(exp));
     }

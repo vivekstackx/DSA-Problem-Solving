@@ -31,7 +31,7 @@ private boolean isOperator(char symbol){
   }
 }
 
-public class PostfixToPrefix {
+public class PostfixToPrefixConversionM2{
     public static void main(String[] args) {
       String postfix = "ABC*D/+E-";
 

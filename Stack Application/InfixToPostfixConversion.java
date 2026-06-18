@@ -77,16 +77,10 @@ class Solution {
                      * POP CONDITIONS:
                      *
                      * 1. Stack top precedence > current operator precedence
-                     *    Example:
-                     *    stack = *
-                     *    current = +
-                     *
                      * 2. Same precedence and current operator is LEFT associative
-                     *    Example:
-                     *    A-B-C
-                     *
+                     * 3. when closing parentheses are current operator till left parentheses
+                     
                      * PUSH CONDITIONS:
-                     *
                      * 1. Stack empty
                      * 2. Stack top is '('
                      * 3. Stack top precedence is lower

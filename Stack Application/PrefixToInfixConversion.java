@@ -31,28 +31,7 @@ class Solution {
                 String second = stack.pop();
 
                 // Build a new infix expression and push back to stack
-                switch (symbol) {
-
-                    case '+':
-                        stack.push("(" + first + "+" + second + ")");
-                        break;
-
-                    case '-':
-                        stack.push("(" + first + "-" + second + ")");
-                        break;
-
-                    case '*':
-                        stack.push("(" + first + "*" + second + ")");
-                        break;
-
-                    case '/':
-                        stack.push("(" + first + "/" + second + ")");
-                        break;
-
-                    case '^':
-                        stack.push("(" + first + "^" + second + ")");
-                        break;
-                }
+               stack.push("(" + first + symbol + second + ")");
             }
             else {
                 // Operand directly goes into stack

@@ -2,7 +2,9 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 class Solution{
-
+ /*
+  Logic : convert postfix -> infix then convert infix to prefix
+ */
  // check current symbol operator ya parenthesis hai ya nahi
     private boolean isOperator(char symbol) {
         return symbol == '+' || symbol == '-' ||

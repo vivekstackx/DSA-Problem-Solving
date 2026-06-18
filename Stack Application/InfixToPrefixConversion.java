@@ -148,8 +148,7 @@ private void swap(StringBuilder str, int i, int j) {
 
     str.setCharAt(i, second);
     str.setCharAt(j, first);
-}
-
+  }
 }
 
 

@@ -78,7 +78,7 @@ class Solution {
                      *
                      * 1. Stack top precedence > current operator precedence
                      * 2. Same precedence and current operator is LEFT associative
-                     * 3. when closing parentheses are current operator till left parentheses
+                     * 3. when closing parentheses are current operator then pop operator till opening parentheses
                      
                      * PUSH CONDITIONS:
                      * 1. Stack empty

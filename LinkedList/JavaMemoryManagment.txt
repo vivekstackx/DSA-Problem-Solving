@@ -333,4 +333,29 @@ Problem:
    (Object Resurrection).
 
 Isi wajah se finalize() Deprecated kar diya gaya.
+
+
+Important:
+
+finalize() object ko delete nahi karta tha.
+
+Ye sirf object ki memory reclaim hone se pehle
+cleanup work karne ke liye call ho sakta tha.
+
+Java me object pehle bhi isi tarah reclaim hota tha
+aur aaj bhi isi tarah hota hai:
+
+Object Unreachable
+        ↓
+Garbage Collector
+        ↓
+Memory Reclaim
+
+Yani:
+
+finalize()
+≠ Object Delete
+
+finalize()
+= Cleanup Before Memory Reclaim
 */

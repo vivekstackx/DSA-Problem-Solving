@@ -1,13 +1,12 @@
 // node structure
 class Node {
-     int data;
+    int data;
     Node next;
 
-     Node(int data){
-      this.data = data;
-      this.next = null;
-     }
-
+    Node(int data){
+        this.data = data;
+        this.next = null;
+    }
 }
 
 class SinglyLinkedList {
@@ -22,29 +21,23 @@ class SinglyLinkedList {
         countNode = 0;
     }
     
-    // Add a new node  at the Beginning of the linked list 
+    // Add a new node at the Beginning of the linked list 
     void insertAtBeginning(int data){
-
         Node newNode = new Node(data);
-
         if(head == null){
-          head = newNode;
-          tail = newNode;
+            head = newNode;
+            tail = newNode;
         }
         else{
-          newNode.next = head;
-          head = newNode;
+            newNode.next = head;
+            head = newNode;
         }
-
-      countNode++;
+        countNode++;
     }
 
     // Add a new node at the end of the linked list
     void insertAtEnd(int data) {
-
         Node newNode = new Node(data);
-
-        // If linked list is empty
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -52,161 +45,130 @@ class SinglyLinkedList {
             tail.next = newNode;
             tail = newNode;
         }
-
         countNode++;
     }
+
     // Add a new node at the specific position
-    void insertAtPosition(int position , int data){
-         
-          // invalid position
-          if(!(position >= 1 && position <= countNode + 1)){
-             return;
-          }
-           int newPosition = position - 1;
-         // create new node 
-          Node newNode = new Node(data);
+    void insertAtPosition(int position, int data) {
+        if (position < 1 || position > countNode + 1) {
+            return;
+        }
+        if (position == 1) {
+            insertAtBeginning(data);
+            return;
+        }
+        if (position == countNode + 1) {
+            insertAtEnd(data);
+            return;
+        }
 
-          if(head == null){
-              head = newNode;
-              tail = newNode;
-          }
-          else{
-             Node temp = head;
-              // go to the position
-              while(newPosition > 1){
-                 temp = temp.next;
-                 newPosition--;
-              }
-              if(position == 1){
-                 newNode.next = head;
-                 head = newNode;
-              }
-              else{
-                 newNode.next = temp.next;
-                 temp.next = newNode;
-              }
-          }
-    
-    
-       if(position == countNode + 1){
-         tail = newNode;
-       }
-      countNode++;
-
+        Node newNode = new Node(data);
+        Node temp = head;
+        for (int i = 1; i < position - 1; i++) {
+            temp = temp.next;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+        countNode++;
     }
 
     // function to delete node from Beginning of linkedlist 
-     void deleteFromBeginning(){
+    void deleteFromBeginning(){
         if(head == null){
-        System.out.println("Linked List is empty!");
-          return;
+            System.out.println("Linked List is empty!");
+            return;
         }
         if(countNode == 1){
-          tail = null;
+            tail = null;
         }
         head = head.next;
-      /* Previous first node becomes unreachable.
-          Since its reference is lost, it can no longer be accessed.
-         The Garbage Collector (GC) will reclaim its memory in the future.
-      */
         countNode--;
-     }
+    }
+
     // function to delete node from end of the Linklist
-     void deleteFromEnd(){
+    void deleteFromEnd(){
         if(head == null){
-        System.out.println("Linked List is empty!");
-          return;
+            System.out.println("Linked List is empty!");
+            return;
         }
-     
         if(countNode == 1){
-          head = null;
-          tail = null;
+            head = null;
+            tail = null;
         }
         else{
             Node current = head; 
-           int count = countNode - 1;
-           while(count > 1){
-             current = current.next;
-             count--;
-           }
-           tail = current;
-           tail.next = null;
+            int count = countNode - 1;
+            while(count > 1){
+                current = current.next;
+                count--;
+            }
+            tail = current;
+            tail.next = null;
         }
-       
         countNode--;
-        
-     }
+    }
 
-     // function to delete node from specific position of Linklist
-     void deleteAtPosition(int position){
-       // invalid position
-          if(!(position >= 1 && position <= countNode)){
-             return;
-          }
-
-          if(head == null){
-        System.out.println("Linked List is empty!");
+    // function to delete node from specific position of Linklist
+    void deleteAtPosition(int position){
+        // Invalid position check
+        if(position < 1 || position > countNode){
             return;
-          }
-          if(countNode == 1){
-            head = null;
-            tail = null;
-          }
-          else if(position == 1){
-            head = head.next;
-          }
-          else{
-            Node current = head;
-            int newPosition = position - 1;
-            while(newPosition > 1){
-            current = current.next;
-            newPosition--;
-          }
-             if(current.next.next == null){
-               tail = current;
-             }
-             current.next = current.next.next;
-      }
-      countNode--;
-       
-   }
+        }
+        if(head == null){
+            System.out.println("Linked List is empty!");
+            return;
+        }
 
-   // function to delete entire linklist 
-   void deleteEntireList(){
-     if(head ==  null){
-   System.out.println("Linked List is empty!");
-      return;
-     }
-     head = null;
-     tail = null;
-     countNode = 0; 
-   }
+        // delete not from Beginning
+        if(position == 1){
+            deleteFromBeginning();
+            return;
+        }
+
+        // delete node from last 
+        if(position == countNode){
+            deleteFromEnd();
+            return;
+        }
+
+        // delete node between first and lastnode of linklist
+        Node current = head;
+        for (int i = 1; i < position - 1; i++) {
+            current = current.next;
+        }
+        current.next = current.next.next;
+        countNode--;
+    }
+
+    // function to delete entire linklist 
+    void deleteEntireList(){
+        if(head ==  null){
+            System.out.println("Linked List is empty!");
+            return;
+        }
+        head = null;
+        tail = null;
+        countNode = 0; 
+    }
 
     // Traverse and print all nodes
     void display() {
-
-   System.out.println("Total node : " + countNode);
-
+        System.out.println("Total node : " + countNode);
         if (head == null) {
-         System.out.println("Linked List is empty!");
+            System.out.println("Linked List is empty!");
             return;
         }
-
         Node current = head;
-
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;
         }
-
-      
+        System.out.println();
     }
 }
 
-public SinglyLinkedListDemo{
-
+public class Main {
     public static void main(String[] args) {
-
         SinglyLinkedList list = new SinglyLinkedList();
 
         list.insertAtEnd(10);
@@ -227,10 +189,8 @@ public SinglyLinkedListDemo{
         list.deleteAtPosition(8);
         list.deleteAtPosition(7);
         list.deleteAtPosition(4);
-       list.deleteEntireList();
-
+        list.deleteEntireList();
          
         list.display();
-
     }
 }

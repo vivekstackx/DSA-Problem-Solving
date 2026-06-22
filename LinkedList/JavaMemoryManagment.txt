@@ -1,0 +1,336 @@
+/*
+=========================================================
+JAVA OBJECT DELETION, GARBAGE COLLECTION & FINALIZE()
+=========================================================
+
+==========================
+Java me Object Delete Kaise Hota Hai?
+==========================
+
+Maan lo mere paas ek object hai:
+
+Node node = new Node(10);
+
+Yanha heap memory me ek object create hua hai jisme 10 data store hai.
+
+Agar hame is object ko delete karna hai to hum direct delete/free method
+call nahi karte jaise C/C++ me karte the.
+
+Hum likhte hain:
+
+node = null;
+
+Iska matlab ye hua ki ab node variable me object ka reference nahi hai.
+
+Ab agar is object ka reference kahin aur store nahi hai to JVM ki nazar me
+ye object "Unreachable Object" ban jayega.
+
+Unreachable Object ka matlab:
+
+- Object ka reference kahin bhi store nahi hai.
+- Koi programmer ya engineer us object ko access nahi kar sakta.
+- Us object ke andar store data (jaise 10) tak pahunchna impossible hai.
+- Kisi object ko access karne ke liye uska reference hona zaruri hai.
+
+Example:
+
+Node node = new Node(10);
+node = null;
+
+Ab object heap me ho sakta hai, lekin us tak pahunchne ka koi rasta nahi hai.
+
+==========================
+Exact Kis Line Par Object Delete Hota Hai?
+==========================
+
+Important:
+
+Java me kisi specific line par object delete nahi hota.
+
+Example:
+
+Node node = new Node(10);
+node = null;
+
+Yanha:
+
+node = null;
+
+execute hote hi object delete nahi hota.
+
+Is line ka matlab sirf itna hai:
+
+- Object ka reference remove ho gaya.
+- Object unreachable (garbage) ban gaya.
+
+Yani:
+
+node = null;
+      ↓
+Object Unreachable
+      ↓
+GC ke liye eligible
+
+Lekin memory abhi bhi occupied ho sakti hai.
+
+Actual memory reclaim tab hogi jab GC chalega aur dekhega:
+
+"Is object tak kisi bhi live reference se pahunchna possible nahi hai."
+
+Tab GC us object ki memory reclaim karega.
+
+Process:
+
+Node node = new Node(10);
+node = null;
+
+      ↓
+
+Object Garbage (Unreachable)
+
+      ↓
+
+Garbage Collector Run
+
+      ↓
+
+Memory Reclaim
+
+Important:
+
+node = null;
+≠ Object Delete
+
+node = null;
+= Object Unreachable
+
+GC
+= Actual Memory Reclaim
+
+GC kab chalega?
+
+- Turant
+- 1 second baad
+- 10 second baad
+- 1 minute baad
+
+Koi guarantee nahi.
+
+Ye decision JVM leti hai.
+
+Isi wajah se Java me free() ya delete() method nahi hota.
+
+==========================
+Garbage Collector (GC)
+==========================
+
+JVM ka Garbage Collector (GC) time-time par check karta hai:
+
+"Kaun-kaun se objects unreachable hain?"
+
+Jo object unreachable hote hain, GC unki memory reclaim (reuse ke liye free)
+kar deta hai.
+
+Reclaim ka matlab:
+
+- Memory ko wapas lena.
+- Future objects ke liye available banana.
+
+Important:
+
+C/C++ me:
+
+free(ptr);
+delete ptr;
+
+Programmer manually memory release karta hai.
+
+Java me:
+
+- Koi free() method nahi hota.
+- Koi delete() method nahi hota.
+- Programmer ko manually object delete nahi karna padta.
+
+Programmer ka kaam sirf itna hai:
+
+Object ko unreachable bana do.
+
+Baaki kaam GC karega.
+
+==========================
+finalize() Method Kya Tha?
+==========================
+
+Pehle Java me finalize() method hota tha.
+
+Ye method object ki memory reclaim hone se pehle ek baar call ho sakta tha.
+
+Example:
+
+protected void finalize() {
+    file.close();
+}
+
+Iska use cleanup ke liye kiya jata tha.
+
+Jaise:
+
+- File Handle
+- Database Connection
+- Network Socket
+- OS Resource
+
+Ye resources release karne ke liye finalize() use hota tha.
+
+==========================
+finalize() Ki Problems
+==========================
+
+1) GC finalize() ko kab call karega?
+
+Koi guarantee nahi.
+
+Ye bhi possible tha:
+
+Object unreachable
+      ↓
+Program end
+      ↓
+finalize() kabhi call hi nahi hua
+
+Ya bahut der baad call hua.
+
+2) Object ko fir se zinda kiya ja sakta tha.
+
+Ye sabse dangerous problem thi.
+
+==========================
+Object Resurrection
+(Object Ko Fir Se Zinda Karna)
+==========================
+
+Example:
+
+class Demo {
+
+    static Demo globalReference;
+
+    @Override
+    protected void finalize() {
+        globalReference = this;
+    }
+}
+
+Yanha sabse important line hai:
+
+globalReference = this;
+
+Yanha:
+
+this = current object
+
+Yani jo object memory reclaim hone wala tha,
+uska reference fir se globalReference me store kar diya gaya.
+
+Process:
+
+Object unreachable
+      ↓
+GC ne object identify kiya
+      ↓
+finalize() call hua
+      ↓
+globalReference = this;
+      ↓
+Object ka reference fir se store ho gaya
+      ↓
+Object reachable ban gaya
+
+Ab:
+
+globalReference
+
+ke through us object ko fir se access kiya ja sakta hai.
+
+Yani object jo memory reclaim hone wala tha,
+wo fir se "zinda" ho gaya.
+
+GC jab dekhega ki object reachable hai,
+to us cycle me uski memory reclaim nahi karega.
+
+Isi process ko Object Resurrection bolte hain.
+
+==========================
+finalize() Deprecated Kyu Hua?
+==========================
+
+Main Reasons:
+
+1) finalize() kab chalega, guarantee nahi thi.
+
+2) Performance issue create karta tha.
+
+3) Object Resurrection possible tha.
+
+4) GC behavior complex aur unpredictable ho jata tha.
+
+Isi wajah se finalize() ko Deprecated kar diya gaya.
+
+==========================
+Modern Java Me Kya Use Hota Hai?
+==========================
+
+Aaj ke Java me:
+
+- try-with-resources
+- close()
+
+use kiya jata hai.
+
+Example:
+
+try-with-resources
+
+automatic resource cleanup provide karta hai
+aur finalize() jaisi problems create nahi karta.
+
+==========================
+Final Summary
+==========================
+
+Object reachable:
+→ Access kiya ja sakta hai.
+
+Object unreachable:
+→ Access nahi kiya ja sakta.
+
+Unreachable object:
+→ GC ke liye candidate hai.
+
+Java me:
+→ free() aur delete() nahi hote.
+
+Programmer:
+→ Object ko unreachable banata hai.
+
+GC:
+→ Memory reclaim karta hai.
+
+node = null;
+→ Object ko unreachable banata hai.
+
+node = null;
+→ Object delete nahi karta.
+
+GC Run
+→ Actual memory reclaim karta hai.
+
+finalize():
+→ Cleanup ke liye tha.
+
+Problem:
+→ Object ko fir se reachable bana sakta tha
+   (Object Resurrection).
+
+Isi wajah se finalize() Deprecated kar diya gaya.
+*/

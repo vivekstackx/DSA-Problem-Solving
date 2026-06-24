@@ -10,6 +10,8 @@ class Node {
 }
 
 /*
+ * jab fast pointer kahi pe rahta h to slow pointer uske mid index pe rahta h
+ * fast distance = 2 × slow distance or slow distance = fast distance / 2
  * Find the middle node of a linked list using the
  * Slow and Fast Pointer technique.
  *

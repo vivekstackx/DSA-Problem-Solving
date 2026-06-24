@@ -71,7 +71,7 @@ class Solution {
     }
 }
 
-class MiddleNodeOfLinkedlist {
+class MiddleNodeOfLinkedlistM1 {
 
     public static void main(String[] args) {
 

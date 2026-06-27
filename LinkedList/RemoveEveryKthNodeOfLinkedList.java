@@ -96,7 +96,7 @@ class Solution {
     }
 }
 
-public class RemoveEveryKthNodeOfLinkedlist {
+public class RemoveEveryKthNodeOfLinkedList {
 
     public static void main(String[] args) {
 

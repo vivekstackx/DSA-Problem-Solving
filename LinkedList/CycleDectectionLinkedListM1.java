@@ -11,9 +11,9 @@ class Node{
 
 class Solution {
   
-private boolean isVisited(ArrayList<Node> list , Node curr){
+private boolean isVisited(ArrayList<Node> visited , Node curr){
 
-   for(Node node : list){
+   for(Node node : visited){
       if(node == curr){
         return true;
       }

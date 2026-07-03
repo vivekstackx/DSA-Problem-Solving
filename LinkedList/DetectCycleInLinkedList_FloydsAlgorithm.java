@@ -1,4 +1,9 @@
 /*
+ * Agar algorithm safely implement kiya jaye (yaani required null checks kiye jayein), to 
+ fast pointer ko 2 se zyada steps chalane par bhi cycle detect ki ja sakti hai. 
+ Lekin Floyd's Algorithm me 2-step version isliye use hota hai kyunki woh sabse simple,
+ readable aur well-proven hai.
+ 
  * Algorithm Name:
  * Floyd's Cycle Detection Algorithm
  * (Also known as the Tortoise and Hare Algorithm)

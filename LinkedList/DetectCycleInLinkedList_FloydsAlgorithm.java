@@ -149,6 +149,46 @@ public class Main {
 }
 
 /*
+bhai sabse pahle , mai ek chij batata hun , 
+maaan lo koi linkedlist h or usme cycle v persent h , 
+or jab mai slow and fast ko same loation se start karta hun matlab ki head point se 
+start karta hun to jaise jaise slow 1 step or fast 2 step badhata h to 
+har badhne par slow and fast ka distane 0 , 1 , 2, 3, 4, 5, etc badhta rahta h , 
+or dusri chij -> ab baat karte h cycle ke bare me , 
+jab ham cycle ke kisi v point se slow and fast ko same point se , yani cycle ke same 
+node se start karte h 1 step fir 2 step move karna to uska meeting point aways vahi node hoga janha 
+se slow and fast start huaa tha , iska region ye h ki maan lo cycle me total 6 node h , 
+or jab ham slow and fast ko same location node pe rakh kar ke start karte h move karna , 
+to jab o same loation pe rahta h dono pointer to uas time fast pointer se slow pointer ka 
+distance hota h length ke barabar , yani 6 ke barabar , or jaise jaise o aagte badhta h ,
+fast se slow ka distance kam hote jata h jaise 6 , 5, 4, 3, 2, 1, 0 or jaise hi 0 ho jata h 
+uska meeting point vahi node ho jata h , matlab jab slow and fast same loation pe rahta h 
+to uas time slow se fast ka distane 0 hota h or fast se slow ka distance length hota h , 
+yani obserbation ye h ki agar cycle ke kisi same node se slow and fast ko start karte h to 
+uska meeting point vahi node hoga , kyunki 6 length ghat ke 0 vahi node pe aa jayega kyunki 
+slow pointer ek ek step aage badhta h or har step pe slow and fast ka distnae 1 , 2, 3, etc 
+hota rahta h , iasi vajah se , lekin jab slow pointer and fast pointer ka move hone ka 
+distance 1 se h matlab slow pointer 1 pe khara h or fast 2 pe to ye same loation nahi h , 
+location ke bich me 1 gap h to ias time fast se slow ka distane 5 hoga , or ye ghat ghat ke 
+0 hgoga to ye hoga uas node ke just pahle , janha se o start huaa tha , 
+to isse hamne ye socha ki jab slow and fast same locaiton pe rahta h cycle me to 
+uas time head vahi node hoga , to meeting point v vahi node hoga , to head se meeting ka distance 
+0 hoga , but jab cycle me maan lo 3 step aage fast pointer ko rahta h slow pointer se , to 
+usaka meeting slow janha se start tha uase 3 step pichhe uska meeting point hoga , yani ki 
+fastpointer jitna step cycle ke slow pointer se aage hota h utna hi step pichhe uska meeting point 
+hota h , or iasi region ki vajah se head se starting node of cycle ka distance and 
+starting node cycle se meeting point ka distane equal aata h yani ki 
+Agar Fast already Slow se k steps aage se start kare...
+
+to meeting
+
+Start node se k steps pehle hogi. always 
+
+*/
+
+
+
+/*
  * My Observation:
  *
  * Suppose a linked list contains a cycle.

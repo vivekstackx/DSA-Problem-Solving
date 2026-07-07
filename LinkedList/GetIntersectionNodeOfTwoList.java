@@ -1,3 +1,12 @@
+/*
+step 1 ) list first ka total node count karo 
+step 2 ) list two ka total node count kro
+step 3 ) fir ian dono length ka difference find karo
+step 4) fir ian dono me se jo length bara hoga uska pointer difference times move kro
+step 5) fir dono list ka pointer equal level pe aa jeyga fir dono ko ek saath ek step kar kr ke move karo jab tak intersection 
+node na mil jaye
+
+*/
 class Node{
    int data;
    Node next;

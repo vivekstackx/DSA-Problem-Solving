@@ -1,73 +1,72 @@
-class Node {
-    int data;
-    Node next;
+class Node{
+   int data;
+   Node next;
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
+     Node(int data){
+       this.data = data;
+       this.next = null;
+     }
 }
 
-class Solution {
+class Solution{
+    
+    // get total cycle node 
+     int getTotalCycleNode(Node head){
+        
+          // find the start node of cycle 
+          Node slow = head;
+          Node fast = head;
 
-    // Counts the total number of nodes present in the cycle.
-    int countCircularNode(Node head) {
+          while(fast != null && fast.next != null){
 
-        Node slowPointer = head;
-        Node fastPointer = head;
-        boolean cycleFound = false;
+              slow = slow.next;
+              fast = fast.next.next;
 
-        // Detect cycle using Floyd's Cycle Detection Algorithm.
-        while (fastPointer != null && fastPointer.next != null) {
+              if(slow == fast){
+                break; // cycle found
+              }
+          }
 
-            slowPointer = slowPointer.next;
-            fastPointer = fastPointer.next.next;
+          if(fast == null || fast.next == null){
+            return 0; // no cycle
+          }
 
-            if (slowPointer == fastPointer) {
-                cycleFound = true;
-                break;
-            }
-        }
+           int count = 0;
 
-        // If a cycle exists, count the nodes in the cycle.
-        if (cycleFound) {
+          do{
+             count++;
+             slow = slow.next;
+            }while(slow != fast);
 
-            int cycleNodeCount = 1;
-            slowPointer = slowPointer.next;
-
-            while (slowPointer != fastPointer) {
-                cycleNodeCount++;
-                slowPointer = slowPointer.next;
-            }
-
-            return cycleNodeCount;
-        }
-
-        // No cycle found.
-        return 0;
-    }
+            return count;
+     }
 }
 
 public class Main {
-
     public static void main(String[] args) {
+      
+       Node head = null;
+       head = new Node(1);
+       head.next = new Node(2);
+       head.next.next = new Node(3);
+       head.next.next.next = new Node(4);
+       head.next.next.next.next = new Node(5);
+       head.next.next.next.next.next = new Node(6);
+       head.next.next.next.next.next.next = new Node(7);
+       head.next.next.next.next.next.next.next = new Node(8);
+       head.next.next.next.next.next.next.next.next = new Node(9);
+       head.next.next.next.next.next.next.next.next.next = new Node(10);
+       head.next.next.next.next.next.next.next.next.next.next = new Node(11);
+       head.next.next.next.next.next.next.next.next.next.next.next = new Node(12);
+       head.next.next.next.next.next.next.next.next.next.next.next.next =  head.next.next.next;
 
-        Solution solution = new Solution();
 
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
-        head.next.next.next.next.next = new Node(6);
-        head.next.next.next.next.next.next = new Node(4);
-        head.next.next.next.next.next.next.next = new Node(8);
-        head.next.next.next.next.next.next.next.next = new Node(9);
-        head.next.next.next.next.next.next.next.next.next = new Node(10);
+       
+       int count = new Solution().getTotalCycleNode(head);
+       System.out.println(count);
 
-        // Create a cycle: 10 -> 4
-        head.next.next.next.next.next.next.next.next.next.next = head.next.next.next;
 
-        System.out.println(solution.countCircularNode(head));
+       
+
     }
 }

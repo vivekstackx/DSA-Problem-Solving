@@ -27,22 +27,22 @@ class Solution{
         curr2 = curr2.next;
       }
 
-      int count = Math.abs(count1 - count2);
+      int diff = Math.abs(count1 - count2);
 
       curr1 = head1;
       curr2 = head2;
 
        if(count1 > count2){
          
-          while(count > 0){
+          while(diff > 0){
              curr1 = curr1.next;
-             count--;
+             diff--;
           }
        }
        else if(count2 > count1){
-          while(count > 0){
+          while(diff > 0){
              curr2 = curr2.next;
-             count--;
+             diff--;
           }
        }
 

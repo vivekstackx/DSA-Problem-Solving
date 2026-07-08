@@ -16,7 +16,6 @@ class Node{
     }
 }
 
-
 class Solution{
    
     Node getIntersectionNode(Node head1 , Node head2){
@@ -81,9 +80,6 @@ public class Main {
        head2 = new Node(8);
        head2.next = new Node(9);
        head2.next.next =  head1.next.next.next.next;
-
-    
-
 
        Node intersectionNode = new Solution().getIntersectionNode(head1, head2);
 

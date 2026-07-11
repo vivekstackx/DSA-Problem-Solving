@@ -1,4 +1,5 @@
 /*
+maine ias problem ko total 4 pointer ke use se solve kiya h -->
 Maine ise kuch is tarah samjha:
 
 1) kth node find karo.

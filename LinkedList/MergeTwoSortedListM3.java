@@ -5,6 +5,9 @@ jo v node chhota hoga uas node ko list ke end me add kr diya jayega (tail ke nex
 node pe point karwa diya jayega , aisa islie kyunki ham bas ek bade node pe wait karte h , tab tak wait karte h 
 jab tak o node se bada ko node aa na jaye jab tak uas node se sabhi node chhota hota h , hame uas node ko uas bade 
 node se pahle hi jodna hoga 
+
+Har step par dono current nodes me jo chhota hota hai, wahi next answer ka hissa banta hai.
+Bade node ko isliye nahi lete kyunki ho sakta hai dusri list me usse bhi chhota node aage ho.
 */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {

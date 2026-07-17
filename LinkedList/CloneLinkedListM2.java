@@ -21,7 +21,7 @@ class Solution {
        this.tail = null;
      }
    
-   Node insertAtEnd(Node head , int data){
+  private Node insertAtEnd(Node head , int data){
       Node newNode = new Node(data);
 
       if(head == null){

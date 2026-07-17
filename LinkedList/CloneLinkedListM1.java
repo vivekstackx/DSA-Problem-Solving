@@ -10,14 +10,15 @@ class Node{
       }
 }
 
-
 class Solution {
 
    private Node tail;
-     Solution(){
+
+   Solution(){
        this.tail = null;
-     }
-   
+   }
+
+   // Insert a new node at the end of the copied list
    Node insertAtEnd(Node head , int data){
       Node newNode = new Node(data);
 
@@ -26,110 +27,121 @@ class Solution {
          tail = newNode;
          return head;
       }
+
       tail.next = newNode;
       tail = newNode;
       return head;
    }
 
-private int getStep(Node originalHead , Node target){
-   if(target == null){
-    return -1;
-   }
+   // Find the position (step/index) of the target node in the original list
+   private int getStep(Node originalHead , Node target){
 
-   int step = 0;
-   Node curr = originalHead;
+      if(target == null){
+         return -1;
+      }
 
-   while(curr != null){
-      
-       if(curr == target){
-          break;
-       }
-       step++;
-       curr = curr.next;
-   }
+      int step = 0;
+      Node curr = originalHead;
 
-   return step;
-}
+      while(curr != null){
 
-   Node cloneList(Node originalHead){
-      
-         Node originalCurr = originalHead;
-         Node copyHead = null;
-
-
-         while(originalCurr != null){
-            copyHead = insertAtEnd(copyHead, originalCurr.data);
-            originalCurr = originalCurr.next;
+         if(curr == target){
+            break;
          }
 
-         originalCurr = originalHead;
-        Node copyCurr = copyHead;
+         step++;
+         curr = curr.next;
+      }
 
-        while(originalCurr != null){
-          int step = getStep(originalHead , originalCurr.randomPointer);
-          if(step != -1){
-             Node temp = copyHead;
-             while(step > 0){
-                temp = temp.next;
-                step--;
-             }
-             copyCurr.randomPointer = temp;
-          }
-          originalCurr = originalCurr.next;
-          copyCurr = copyCurr.next;
-        }
-
-
-       return copyHead;
-
+      return step;
    }
 
+   Node cloneList(Node originalHead){
 
+      Node originalCurr = originalHead;
+      Node copyHead = null;
 
-    void display(Node head){
-        if(head == null){
-          return;
-        }
-        Node curr = head;
+      // Step 1: Create a copy of the original list
+      while(originalCurr != null){
+         copyHead = insertAtEnd(copyHead, originalCurr.data);
+         originalCurr = originalCurr.next;
+      }
 
-        while(curr != null){
-           
-           System.out.print(curr.data + " : ");
-           int random = curr.randomPointer == null ? -1 : curr.randomPointer.data;
-           System.out.println(random);
-           curr = curr.next;
-        }
-        System.out.println(); 
-    }
+      originalCurr = originalHead;
+      Node copyCurr = copyHead;
+
+      // Step 2: Set the random pointers in the copied list
+      while(originalCurr != null){
+
+         // Find the position of the random node in the original list
+         int step = getStep(originalHead , originalCurr.randomPointer);
+
+         if(step != -1){
+
+            // Move to the same position in the copied list
+            Node temp = copyHead;
+
+            while(step > 0){
+               temp = temp.next;
+               step--;
+            }
+
+            // Connect the copied random pointer
+            copyCurr.randomPointer = temp;
+         }
+
+         originalCurr = originalCurr.next;
+         copyCurr = copyCurr.next;
+      }
+
+      return copyHead;
+   }
+
+   void display(Node head){
+
+      if(head == null){
+         return;
+      }
+
+      Node curr = head;
+
+      while(curr != null){
+
+         System.out.print(curr.data + " : ");
+         int random = curr.randomPointer == null ? -1 : curr.randomPointer.data;
+         System.out.println(random);
+
+         curr = curr.next;
+      }
+
+      System.out.println();
+   }
 }
 
-
 public class Main {
-    public static void main(String[] args) {
-        
-        // connetion established
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
 
-       // random connetion established
-       head.randomPointer = head.next.next;
-       head.next.randomPointer = head;
-       head.next.next.randomPointer = head.next.next.next.next;
-       head.next.next.next.randomPointer = head.next.next;
-       head.next.next.next.next.randomPointer = head.next;
+   public static void main(String[] args){
 
-       Solution obj = new Solution();
+      // Create the original linked list
+      Node head = new Node(1);
+      head.next = new Node(2);
+      head.next.next = new Node(3);
+      head.next.next.next = new Node(4);
+      head.next.next.next.next = new Node(5);
 
-       obj.display(head);
-      
-       Node copyHead = obj.cloneList(head);
+      // Assign random pointer connections
+      head.randomPointer = head.next.next;
+      head.next.randomPointer = head;
+      head.next.next.randomPointer = head.next.next.next.next;
+      head.next.next.next.randomPointer = head.next.next;
+      head.next.next.next.next.randomPointer = head.next;
 
-        obj.display(copyHead);
+      Solution obj = new Solution();
 
+      obj.display(head);
 
+      Node copyHead = obj.cloneList(head);
 
-    }
+      obj.display(copyHead);
+   }
 }

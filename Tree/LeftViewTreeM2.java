@@ -1,9 +1,9 @@
 class Solution {
     
-    private ArrayList<Integer> getLeftView(Node root , int level , boolean[] visited , ArrayList<Integer> list){
+    private void getLeftView(Node root , int level , boolean[] visited , ArrayList<Integer> list){
         
            if(root == null){
-               return null;
+               return;
            }
            if(!visited[level - 1]){
                visited[level - 1] = true;
@@ -13,7 +13,6 @@ class Solution {
            getLeftView(root.left , level + 1 , visited, list);
            getLeftView(root.right , level + 1 , visited , list);
            
-           return list;
     }
     private int getMaxLevel(Node root){
         
@@ -36,7 +35,7 @@ class Solution {
         
         boolean[] visited = new boolean[height];
         
-        return getLeftView(root , 1 , visited , list);
-       
+        getLeftView(root , 1 , visited , list);
+        return list;
     }
 }

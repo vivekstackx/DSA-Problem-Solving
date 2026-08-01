@@ -14,10 +14,9 @@ class Solution {
          while(!queue.isEmpty()){
             // current level processing 
             int size = queue.size();
-            // store the last node of each level
             while(size > 0){
                 TreeNode curr = queue.poll();
-                 
+                // store the last node of each level
                  if(size == 1){
                     ans.add(curr.val);
                  }

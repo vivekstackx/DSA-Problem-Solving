@@ -1,4 +1,4 @@
-lass Solution {
+class Solution {
     public ArrayList<Integer> leftView(Node root) {
         // code here
          ArrayList<Integer> list = new ArrayList<>();

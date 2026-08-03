@@ -1,5 +1,4 @@
-/*
-Definition for Node
+
 class Node {
     int data;
     Node left;
@@ -11,8 +10,6 @@ class Node {
 
     }
 }
-*/
-
 class Solution {
     private int leftMostPosition, rightMostPosition;
     

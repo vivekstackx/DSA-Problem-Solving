@@ -73,7 +73,7 @@ class Solution {
                 }
 
             }
-
+           // Traverse HashMap for sorting data when current level execution will completed.
             for(int i = 0; i < totalVerticalLine; i++){
              
              List<Integer> list = groupOfRowColmMap.get(i); 

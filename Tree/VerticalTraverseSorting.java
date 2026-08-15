@@ -1,3 +1,9 @@
+/*
+leetcode 987 -----------------------------
+ye v normal vertical traversal hi h bas ek condition h ---
+iasme jab same level( same row) and same vertical line (same column) pe anne vale sabhi 
+node ko accending order me sort karna h 
+ */
 
 class Solution {
     private int leftMostPosition , rightMostPosition;

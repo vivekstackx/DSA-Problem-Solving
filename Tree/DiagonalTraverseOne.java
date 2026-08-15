@@ -46,6 +46,8 @@ class Tree {
 
        if(root == null) return ans;
 
+       leftMostPosition = 0;
+       
        getPosition(root , 0);
 
        int totalDiagonalLine = Math.abs(leftMostPosition - 1);

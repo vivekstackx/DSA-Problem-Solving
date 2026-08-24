@@ -1,3 +1,7 @@
+/*
+ Time complexity : O(N)
+ space Complexity : O(1)
+*/
 
 class Solution {
     private int previousData;

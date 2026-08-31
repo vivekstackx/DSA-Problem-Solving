@@ -1,7 +1,4 @@
 
-/*
- time complexity : O(N2)
-*/
 
 class Solution {
 

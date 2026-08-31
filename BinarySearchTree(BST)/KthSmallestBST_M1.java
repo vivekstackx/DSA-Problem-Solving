@@ -1,4 +1,8 @@
 
+/*
+ time complexity : O(N2)
+*/
+
 class Solution {
 
   private void inorderTraverse(TreeNode root , List<Integer> inorderList){

@@ -1,6 +1,5 @@
 
 
-
 class Solution {
     private int index; 
     

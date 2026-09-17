@@ -1,4 +1,8 @@
- /* Structure of a Binary Search Tree node
+/*
+  time : o(n2)
+*/
+
+/* Structure of a Binary Search Tree node
 class Node {
     int data;
     Node left, right;

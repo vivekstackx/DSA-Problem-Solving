@@ -1,4 +1,12 @@
-import java.util.*;
+/*
+Time complexity : 
+
+push() — O(log n)
+pop() — O(log n)
+peek() — O(1)
+getSize() / isEmpty() — O(1)
+
+*/
 
 class Pair {
     int data, priority;

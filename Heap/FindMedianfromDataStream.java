@@ -1,3 +1,5 @@
+// this code is not efficient
+
 class MedianFinder {
    private ArrayList<Integer> list;
    private double currentMedian; 

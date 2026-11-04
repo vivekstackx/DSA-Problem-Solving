@@ -1,4 +1,3 @@
-import java.util.*;
 
 class Heap {
     private int heapSize; 

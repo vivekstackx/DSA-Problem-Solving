@@ -1,36 +1,34 @@
 
 /*
- Test cases for all edge cases : ) 
+------------Test case for all edge cases---------------------
 
- [1] → true
+Single element valid: [1] → true
 
-[2] → false
+Single element invalid: [2] → false
 
-[1, 1, 1] → true
+All ones (multi-element): [1, 1, 1] → true
 
-[2, 1] → true
+Already valid early exit: [2, 1] → true
 
-[2, 2] → false
+maxValue == remSum (exact equal): [2, 2] → false
 
-[2, 3, 1] → false
+maxValue < remSum (smaller max): [2, 3, 1] → false
 
-[4, 2, 1] → false
+maxValue > remSum initially, later hits maxValue == remSum: [4, 2, 1] → false
 
-[1, 100] → true
+remSum == 1 (fast reduction to 1): [1, 100] → true
 
-[1, 1, 100] → false
+remSum == 1 with multiple 1s: [1, 1, 100] → false (remSum == 2, 100 % 2 == 0)
 
-[3, 6] → false
+element == 0 with remSum > 1 (exact multiple of remSum): [3, 6] → false
 
-[2, 6] → false
+element == 0 with remSum > 1 (another multiple): [2, 6] → false
 
-[9, 3, 5] → true
+Multiple steps with modulo jump: [9, 3, 5] → true
 
-[5, 8] → true
+Large value / overflow test (long): [1, 1000000000] → true
 
-[1, 1000000000] → true
-
-[2, 0] → false
+Zero in array (if non-LeetCode input): [2, 0] → false (or 0 in target if allowed)
 
 */
 

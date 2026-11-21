@@ -82,6 +82,7 @@ class Solution {
         if (exponent == 0) return 1;
 
         // Agar exponent negative h
+        // Compute positive power first, then take reciprocal once at the end
         if (exponent < 0) {
             return 1 / powerOfNumber(base, -exponent);
         }

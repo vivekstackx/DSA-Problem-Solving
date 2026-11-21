@@ -65,7 +65,7 @@
 
     code Representation :) 
       if (exponent < 0) {
-            return powerOfNumber(1 / base, -exponent);
+            return powerOfNumber(1 / base, -exponent); // Approach 1: Calculate reciprocal first, then power. but it will not work for accurate output.
         }
 
  ---------------------------------------------------------------------------
@@ -91,7 +91,7 @@
 
  code Representation :) 
         if (exponent < 0) {
-            return 1 / powerOfNumber(base, -exponent);
+            return 1 / powerOfNumber(base, -exponent); // Approach 2: Calculate power first, then reciprocal (it will work for accurate floating point output).
         }
  
  ============================================================================

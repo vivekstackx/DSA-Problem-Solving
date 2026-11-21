@@ -18,7 +18,7 @@
     2 ka power 0 = 1
     3 ka power 0 = 1
 
-    code Repersentation :)   if (exponent == 0) return 1;
+    code Representation :)   if (exponent == 0) return 1;
 
  2. Agar exponent even hota h to use ham aise likh sakte h --
 
@@ -29,7 +29,7 @@
 
     base⁸ = (base * base)⁸/²
 
-    code Repersentation :) 
+    code Representation :) 
     
          if (exponent % 2 == 0) {
             return powerOfNumber(base * base, exponent / 2);
@@ -46,7 +46,7 @@
 
     base⁹ = base * (base * base)⁽⁹⁻¹⁾/²
 
-    code Repersentation :) 
+    code Representation :) 
      return base * powerOfNumber(base * base, (exponent - 1) / 2);
 
  4. Agar exponent negative hota h to --
@@ -63,7 +63,7 @@
     Yahan -8 isliye diya gaya kyunki original exponent negative tha.
     Uska positive power calculate karne ke liye -exponent kar denge.
 
-    code Repersentation :) 
+    code Representation :) 
       if (exponent < 0) {
             return powerOfNumber(1 / base, -exponent);
         }
@@ -89,7 +89,7 @@
  Ham dusre approach ka use kar sakte h, yani pahle power calculate
  kar lenge aur uske baad ek baar reciprocal le lenge.
 
- code Repersentation :) 
+ code Representation :) 
         if (exponent < 0) {
             return 1 / powerOfNumber(base, -exponent);
         }

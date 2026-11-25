@@ -63,7 +63,7 @@ class Solution {
           // right portion
           mergeSort(arr , mid + 1 , end , temp);
           
-          // merge two list
+          // merge two list (left portion list and right portion list)
           merge(arr , start , mid , mid + 1 , end , temp); 
                     
     }

@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 class Solution {
 
     private void powerSet(int[] nums , int index , List<Integer> temp , List<List<Integer>> ans){
@@ -26,4 +29,19 @@ class Solution {
 
         return ans;
     }
+
+}
+
+
+class Main{
+   public static void main(String[] args){
+     
+       Solution obj = new Solution(); 
+       
+       int[] arr = {1 , 2 , 3 }; 
+
+       List<List<Integer>> subSequence = obj.subsets(arr);
+
+       System.out.println(subSequence);
+   }
 }

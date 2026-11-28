@@ -1,6 +1,7 @@
 class Solution {
 
     private void generate(int n, int left, int right, List<String> ans, StringBuilder str) {
+        
         if (left == n && right == n) {
             ans.add(str.toString());
             return;

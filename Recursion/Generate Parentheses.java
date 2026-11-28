@@ -2,7 +2,6 @@ class Solution {
 
     private void generate(int n , int left , int right , List<String> ans , StringBuilder str){
         
-             
              // left parenthesis
              if(left < n){
                 str.append('(');

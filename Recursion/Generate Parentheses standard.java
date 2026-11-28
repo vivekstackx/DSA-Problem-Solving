@@ -1,3 +1,6 @@
+import java.util.List; 
+import java.util.ArrayList; 
+
 class Solution {
 
     private void generate(int n, int left, int right, List<String> ans, StringBuilder str) {
@@ -25,4 +28,16 @@ class Solution {
         generate(n, 0, 0, ans, new StringBuilder());
         return ans;
     }
+}
+
+
+class Main{
+   public static void main(String[] args){
+     
+      int n = 3; 
+      
+      List<String> ans = new Solution().generateParenthesis(n);
+
+      System.out.println(ans); 
+   }
 }
